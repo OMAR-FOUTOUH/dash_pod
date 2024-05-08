@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast Dashboard</title>
+    <!-- font-awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- favicon -->
+    <link rel="icon" href="../img/favicon.ico" />
+    <!-- css style -->
+    <link rel="stylesheet" href="style.css" />
+<style>
+body { 
+  display: grid;
+  grid-template-areas: 
+    "nav ads ads ads"
+    "nav article article article"
+    "nav footer footer footer"
+    "nav footer footer footer";
+
+  grid-template-rows: 80px 1fr 0px;  
+  grid-template-columns: 20% 1fr 0%;
+  /* grid-row-gap: 10px;
+  grid-column-gap: 10px; */
+  /* height: 100vh; */
+  margin: 0;
+  }  
+header, footer, article, nav, div {
+  padding: 1.2em;
+  
+  }
+  
+#pageHeader {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+display: none;
+  
+  }
+#pageFooter {
+  grid-area: footer;
+  }
+#mainArticle { 
+  grid-area: article;  
+  /* height: 130vh;     */
+
+  }
+#mainNav { 
+  grid-area: nav; 
+  background-color: black;
+  height: 130vh;    
+  /* width: 12rem; */
+  /* position: fixed; */
+  
+  }
+#siteAds { 
+  grid-area: ads; 
+  
+  } 
+  #pageHeader img{
+    width: 50px;
+    height: 50px;
+  }
+  #mainNav{
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  position: fixed;
+
+  }
+  header #pageheader{
+    display: none;
+  }
+/* @media all and (max-width:755px) {
+  .component:nth-child(3) i::after {
+  height: 115vh;
+
+}
+} */
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 775px) {
+  #mainArticle { 
+
+  
+  grid-area: article;
+       
+        z-index: -1;
+  }
+  body { 
+    grid-template-areas:
+      "header"
+      "article"
+      "footer";
+     
+      /* grid-template-rows: 80px 0fr 0fr 1fr; */
+        grid-template-columns: 1fr;
+ }
+ #mainNav{
+  display: none;
+  /* position: absolute; */
+ }
+ #mainav ul li a {
+  color: white;
+  font-size: medium;
+ }
+ nav{
+  z-index: 10000;
+  
+ }
+ #siteAds{
+  display: none;
+ }
+ #mainarticle{
+  z-index: -1;
+ }
+ #mainArticle h2 {
+        width: 121%;
+        font-size: 1.5rem;
+
+}
+.headers p{
+  font-size: 110%;
+}
+#mainArticle p {
+  width: 100%;
+}
+.component{
+  padding: 0rem;
+}
+.component:nth-child(3) i::after {
+  height: 45vh;
+}
+.contenue{
+  margin-bottom: 2rem;
+}
+.component:nth-child(3) i::after {
+  height: 25vh;
+
+}
+
+#pageHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#pageHeader ul{
+        display: block;
+        padding: 1rem;
+        list-style: none;
+        padding-block: 1.2rem;
+}
+#pageHeader h3{
+  color: white;
+  font-size: 1.3rem;
+  padding-bottom: 1.4rem;
+}
+#pageHeader button{
+  width: 9rem;
+  height: 3rem;
+  color: white;
+  background-color: rgb(47, 46, 46);
+  border: none;
+  border-radius: 30px;
+}
+#pageHeader ul li i,a{
+  color: white;
+  font-weight: 600;
+  padding: 1.2rem 1.2rem 1.5rem 0rem;
+}
+#pageheader button{
+  width: 9rem;
+  height: 3rem;
+  border: none;
+}
+
+#siteads button{
+display: none;
+}
+#pageFooter {
+    padding: 20px; /* Add padding for better spacing */
+    text-align: center; /* Center-align content */
+  }
+  
+  /* Adjustments to the copyright text */
+  .copyright {
+    margin-bottom: 10px; /* Add margin for separation */
+  }
+  
+  /* Adjustments to the footer elements container */
+  #footerelements {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align elements */
+  }
+  
+  /* Adjustments to the columns */
+  .column1 {
+    margin-bottom: 15px; /* Add margin for separation */
+  }
+  
+  /* Adjustments to the buttons */
+  .googleplay,
+  .appstore {
+    margin: 5px; /* Add margin for separation */
+    width: 150px; /* Set a specific width for consistency */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+  
+  /* Adjustments to the social icons */
+  .social {
+    margin-top: 15px; /* Add margin for separation */
+  }
+
+
+}
+</style>
+<body>
+  <header id="pageHeader">
+    <img src="images/logytalks_logo-removebg-preview (1) 1.png" alt="">
+   
+      <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <a href="./sub_pages/upload.html"><i class="fa-solid fa-plus"></i></a>
+        
+          <i class="fas fa-bars"></i>
+          
+          <!-- <i class="fas fa-x"></i> -->
+
+          
+        </label>
+        
+        <ul id="">
+          <li><h3>Podcast name</h3></li>
+          <a href="./sub_pages/upload.html"><i class="fa-solid fa-plus"></i>New Episode</a>
+          <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Analytics</a></li>
+          <li><a href="#"><i class="fa-solid fa-microphone-lines"></i> Episodes</a></li>
+          <li><a href="#"><i class="fa-solid fa-align-left"></i> Interact</a></li>
+          <li><a href="#"><i class="fa-solid fa-hand-holding-dollar"></i> Monetize</a></li>
+          <li><a  href="#"><i class="fa-solid fa-wrench"></i> Settings</a></li>
+        </ul>
+  
+
+  </header>
+  <article id="mainArticle">
+    <!-- <div id="stepsline" class="stepsline">
+      <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div> -->
+    <div class="headers"><h2>Welcome to <span>LOGYTalks</span> for Podcasters!
+  </h2>
+  <p id="text"></p>
+    </div>
+<div class="components">
+  <!-- <div class="blurcercle"></div> -->
+  <div class="component">
+    <i class="fa-regular fa-file"></i>
+    <div class="contenue">
+    <h3>Make your first episode</h3>
+    <p>Tip: if you’re not totally ready to commit, try making a short trailer to get your podcast out there.</p>
+    <button id="myButton">Let's do this</button>
+    </div>
+    <script>
+      document.getElementById("myButton").addEventListener("click", function() {
+          // Navigate to the other file (e.g., "otherfile.html")
+          window.location.href = "./sub_pages/upload.html";
+      });
+  </script>
+  </div>
+  <div class="component">
+    <i class="fa-regular fa-images"></i>
+    <div class="contenue">
+    <h3>Set up your podcast</h3>
+    <p>Choose a name and cover art for your podcast. Don't have it all figured out yet? You can always change this later.</p>
+    <button>Go to podcast setup</button>
+    </div>
+  </div>
+  <div class="component">
+    <i class="fa-regular fa-dollar"></i>
+    <div class="contenue">
+    <h3>Set up monetization (optional)</h3>
+    <p>Choose monetization options that work for you. Explore ads, podcast subscriptions, and more.</p>
+    <a  href="#">Learn more about monetization</a>
+    </div>
+  </div>
+  <div class="component">
+    <i class="fa-solid fa-chart-line"></i>
+        <div class="contenue">
+    <h3>Get listeners!</h3>
+    <p>All that's left to do is tell people about your podcast. As soon as you get a few plays, we'll show your analytics here.</p>
+   
+    </div>
+  </div>
+</div>
+</article>
+  <nav id="mainNav">
+    <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+        
+      </label>
+      
+      <ul id="">
+        <li><h3>Podcast name</h3></li>
+        <a href="./sub_pages/upload.html"><i class="fa-solid fa-plus"></i>New podcast</a>
+
+        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Analytics</a></li>
+        <li><a href="#"><i class="fa-solid fa-microphone-lines"></i> Episodes</a></li>
+        <li><a href="#"><i class="fa-solid fa-align-left"></i> Interact</a></li>
+        <li><a href="#"><i class="fa-solid fa-hand-holding-dollar"></i> Monetize</a></li>
+        <li><a href="#"><i class="fa-solid fa-wrench"></i> Settings</a></li>
+      </ul>
+  </nav>
+  <div id="siteAds">
+    <button id="adsButton"><i class="fa-solid fa-user"></i></button>
+    <div id="adsWindow" class="window">
+      <ul id="profile">
+        <li><a href="#"><i class="fa-regular fa-user"></i> Profile</a></li>
+        <li>          <a href="./sub_pages/upload.html"><i class="fa-solid fa-plus"></i>New Podcast</a>
+        </li>
+        <li><a href="#"><i class="fa-solid fa-question"></i>Help</a></li>
+        <li><a href="#"><i class="fa-solid fa-globe"></i>Languages</a></li>
+        <hr>
+        <li><a href="#"><i class="fa-solid fa-wrench"></i> Settings</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer id="pageFooter">
+    <div class="copyright">
+      <p>©2024 <strong><span>LOGYTalks</span></strong></p>
+    </div>
+    <div id="footerelements">
+   <ul class="column1">
+    
+   <a href="#">Careers</a>
+   <a href="#">Legal</a>
+   <a href="#">Help</a>
+   </ul>
+  
+   <div>
+    <button class="googleplay"><i class="fa-brands fa-google-play"></i>Google</button>
+    <button class="appstore"><i class="fa-brands fa-apple"></i>Apple</button>
+   </div>
+   <div class="social">
+    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+    <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+   </div>
+   </div>
+ 
+  </footer>
+  <script src="script.js"></script>
+</body>

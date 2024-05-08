@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Audio or Video</title>
+    <link rel="stylesheet" href="./upload.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+    <style>
+    
+    </style>
+</head>
+<body>
+  <a href="../index.html"><i class="fa-solid fa-house"></i>Back</a>
+  <div class="sections">
+    <div class="headers"> 
+        <h3>Create episode</h3>
+        <hr>
+    </div>
+    <section>
+    <div class="content">
+    <h1>Upload Audio or Video</h1>
+    <p>Create an audio or video episode in a few simple steps.</p>
+    
+ 
+    <h2>Need to build an episode?</h2>
+    <p>If you don't have a single file to upload, you can record and edit audio or video and create a new episode with Riverside.</p>
+    
+    <h3>Upcoming changes to our recording tools</h3>
+    <p>Beginning June 2024, our recording and editing tools will no longer be available. You can record new episodes with Riverside. <a href="https://www.riverside.fm/">Learn more</a></p>
+    <div class="requirements">
+      <h2>Supported file types:</h2>
+      <li>Audio files: mp3, m4a, wav, or mpg</li>
+      <li>Video files: mp4 or mov</li>
+    </div>
+  </div>
+<div class="wrapper">
+    <div class="container">
+      <h1>Upload your file</h1>
+      <div class="upload-container">
+        <div class="border-container">
+          <div class="icons fa-4x">
+            <i class="fa-solid fa-video" data-fa-transform="shrink-3 down-2 left-6 rotate--45"></i>
+            <i class="fa-solid fa-headphones" data-fa-transform="shrink-2 up-4"></i>
+            <i class="fas fa-podcast" data-fa-transform="shrink-3 down-2 right-6 rotate-45"></i>
+          </div>
+          <!--<input type="file" id="file-upload">-->
+          <p>Drag and drop files here, or 
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <!-- <input type="file" name="file" accept=".mp3, .m4a, .wav, .mpg, .mp4, .mov" required> -->
+                <input type="file" id="fileInput" style="display:none;">
+<label for="fileInput" id="fileInputLabel">Click here to upload</label>
+                <br>
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
